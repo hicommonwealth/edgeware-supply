@@ -1,5 +1,3 @@
-## nodeup
+## edgeware-supply
 
-A simple script for detecting stalled nodes using the polkadot-js API.
-
-Can also be extended to check for other chain parameters.
+A Zeit service for retrieving the total issuance of Edgeware.
