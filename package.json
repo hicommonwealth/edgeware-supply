@@ -1,0 +1,19 @@
+{
+  "name": "nodeup",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hicommonwealth/nodeup.git"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@polkadot/api": "^0.92.0-beta.6",
+    "@polkadot/util": "^1.3.1",
+    "@polkadot/util-crypto": "^1.3.1",
+    "edgeware-node-types": "1.0.9",
+    "uuid": "^3.3.3"
+  }
+}
