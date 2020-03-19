@@ -504,10 +504,10 @@ decamelize@^1.2.0:
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
-edgeware-node-types@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/edgeware-node-types/-/edgeware-node-types-1.1.0.tgz#ce6f773d6907fde929395347d997e21bc37afa87"
-  integrity sha512-0e56OWLDowEvEj30mJ+Sp72WlaGayRobxE7q3vSBTH1wNiPTafLQ53NMCO68j6V0aTycMzC373VR08iGKoDf5g==
+edgeware-node-types@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/edgeware-node-types/-/edgeware-node-types-1.2.0.tgz#d92d19f71195c7dd504b021704a403568129d371"
+  integrity sha512-7jsMSWT3DarKQnYcyqnzMK9Pi/DN5M9HPl7ke/rzUPsWvXUckVd2q+KJAQdqob+AvLLDKZ98p1frTrfGXwsJxw==
 
 elliptic@^6.5.2:
   version "6.5.2"
