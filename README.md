@@ -1,6 +1,7 @@
 ## edgeware-supply
 
 A Zeit service for retrieving the total issuance of Edgeware.
+Example: https://edgeware-supply.now.sh/
 
 ### Installing
 
