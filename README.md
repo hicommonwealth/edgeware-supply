@@ -9,7 +9,7 @@ Using https://edgeware-supply-mocha.now.sh/ will return the current total, circu
 ```
 
 
-Using https://edgeware-supply-5u16enr6e.vercel.app/ will only return the total supply in plaintext. For example:
+Using https://edgeware-supply.dillchen.now.sh/ will only return the total supply in plaintext. For example:
 
 ```
 5489144429
