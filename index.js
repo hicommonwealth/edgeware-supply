@@ -1,13 +1,10 @@
 #!/usr/bin/env node
 
-const { NowRequest, NowResponse } = require('@now/node');
 const { ApiPromise, WsProvider } = require('@polkadot/api');
 const { bnToBn } = require('@polkadot/util/bn');
 const { stringToU8a } = require('@polkadot/util');
 const { u128 } = require('@polkadot/types');
-const { IdentityTypes } = require('edgeware-node-types/dist/identity');
-const { SignalingTypes } = require('edgeware-node-types/dist/signaling');
-const { VotingTypes } = require('edgeware-node-types/dist/voting');
+const { Mainnet } = require('@edgeware/node-types');
 
 module.exports = async (req, res) => {
   const nodeUrl = 'ws://mainnet1.edgewa.re:9944';
@@ -24,12 +21,7 @@ module.exports = async (req, res) => {
   // initialize the api
   const api = await ApiPromise.create({
     provider: new WsProvider(nodeUrl),
-    types: {
-      ...IdentityTypes,
-      ...SignalingTypes,
-      ...VotingTypes,
-      Balance2: u128,
-    },
+    ...Mainnet,
   });
   connected = true;
 
@@ -48,11 +40,14 @@ module.exports = async (req, res) => {
     const treasuryStr = treasury.freeBalance.div(bnToBn(10).pow(bnToBn(tokenDecimals))).toString(10);
     const circulatingStr = issuance.sub(treasury.freeBalance).div(bnToBn(10).pow(bnToBn(tokenDecimals))).toString(10);
     res.setHeader('content-type', 'text/plain');
-    res.status(200).send(JSON.stringify({
-      'total_supply': issuanceStr,
-      'circulating_supply': circulatingStr,
-      'treasury_supply': treasuryStr,
-    }));
+
+    if (!!req.query.circulating) {
+      res.status(200).send(circulatingStr);
+    } else if (!!req.query.treasury) {
+      res.status(200).send(treasuryStr);
+    } else {
+      res.status(200).send(issuanceStr);
+    }
   } catch (e) {
     res.setHeader('content-type', 'text/plain');
     res.status(500).send('Error fetching Edgeware supply data');
